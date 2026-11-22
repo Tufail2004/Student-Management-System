@@ -27,9 +27,15 @@ app.get("/", (req, res) => {
 mongoose.connect(mongoUri)
   .then(() => {
     console.log("MongoDB connected");
-    app.listen(port, () => console.log(`Server started on port ${port}`));
+    if (process.env.NODE_ENV !== "production") {
+      app.listen(port, () => console.log(`Server started on port ${port}`));
+    }
   })
   .catch(err => {
     console.error("MongoDB connection failed:", err.message);
-    process.exit(1);
+    if (process.env.NODE_ENV !== "production") {
+      process.exit(1);
+    }
   });
+
+module.exports = app;
