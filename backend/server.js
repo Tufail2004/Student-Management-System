@@ -33,7 +33,8 @@ mongoose.connect(mongoUri)
   })
   .catch(err => {
     console.error("MongoDB connection failed:", err.message);
-    if (process.env.NODE_ENV !== "production") {
+    if (!process.env.VERCEL) {
+
       process.exit(1);
     }
   });
