@@ -27,9 +27,10 @@ app.get("/", (req, res) => {
 mongoose.connect(mongoUri)
   .then(() => {
     console.log("MongoDB connected");
-    if (process.env.NODE_ENV !== "production") {
-      app.listen(port, () => console.log(`Server started on port ${port}`));
-    }
+    if (!process.env.VERCEL) {
+  app.listen(port, () => console.log(`Server started on port ${port}`));
+}
+
   })
   .catch(err => {
     console.error("MongoDB connection failed:", err.message);
