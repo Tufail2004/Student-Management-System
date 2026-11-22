@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="login-box">
+  <h2>Register</h2>
+
+  <input type="text" id="regUser" placeholder="Username">
+  <input type="password" id="regPass" placeholder="Password">
+
+  <select id="regRole">
+    <option value="admin">Admin</option>
+    <option value="teacher">Teacher</option>
+    <option value="student">Student</option>
+  </select>
+
+  <button onclick="register()">Register</button>
+
+  <p class="register-link">
+    Already registered? <a href="login.html">Login</a>
+  </p>
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>

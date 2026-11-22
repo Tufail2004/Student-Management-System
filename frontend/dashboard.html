@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-page">
+
+
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>SMS</h2>
+    <ul>
+      <li class="active"><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="dashboard.html#students">Students</a></li>
+      <li><a href="attendance.html">Attendance</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li onclick="logout()" class="logout">Logout</li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <h1>Dashboard</h1>
+    </div>
+
+    <!-- STATS -->
+    <div class="cards">
+      <div class="card">
+        <h3>Total Students</h3>
+        <p id="totalStudents">0</p>
+      </div>
+      <div class="card">
+        <h3>Total Courses</h3>
+        <p id="totalCourses">0</p>
+      </div>
+      <div class="card">
+        <h3>Active Students</h3>
+        <p id="activeStudents">-</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <form id="studentForm" class="student-form">
+      <input id="name" placeholder="Name" aria-label="Name" required>
+      <input id="roll" placeholder="Roll No" aria-label="Roll No" required>
+      <input id="email" type="email" placeholder="Email" required>
+      <input id="course" placeholder="Course" aria-label="Course" required>
+      <button type="submit">Add Student</button>
+    </form>
+    <p id="studentMessage" class="form-message" role="status" aria-live="polite"></p>
+
+    <!-- SEARCH -->
+    <input class="search" placeholder="Search student..." onkeyup="searchStudent(this.value)">
+
+    <!-- TABLE -->
+    <div id="students" class="table-wrap"><table>
+      <thead>
+        <tr>
+          <th>Name</th><th>Roll</th><th>Email</th><th>Course</th><th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table></div>
+
+  </main>
+</div>
+
+<script src="dashboard.js"></script>
+<script src="auth.js"></script>
+<script>if (protectPage("admin")) loadStudents();</script>
+</body>
+</html>

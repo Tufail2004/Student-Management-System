@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Results | SMS</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>SMS</h2>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="dashboard.html#students">Students</a></li>
+        <li><a href="attendance.html">Attendance</a></li>
+        <li class="active"><a href="results.html" aria-current="page">Results</a></li>
+        <li><button class="logout" onclick="logout()">Logout</button></li>
+      </ul>
+    </aside>
+    <main class="main">
+      <div class="topbar"><h1>Results</h1></div>
+      <form id="resultForm" class="data-form">
+        <select id="resultStudent" required aria-label="Student"><option value="">Select student</option></select>
+        <input id="subject" placeholder="Subject" required>
+        <input id="marks" type="number" min="0" step="any" placeholder="Marks" required>
+        <input id="totalMarks" type="number" min="1" step="any" placeholder="Total Marks" required>
+        <button type="submit">Add Result</button>
+      </form>
+      <p id="resultMessage" class="form-message" role="status" aria-live="polite"></p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Student</th><th>Roll No</th><th>Course</th><th>Subject</th><th>Marks</th><th>Total Marks</th></tr></thead>
+          <tbody id="resultsRows"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  <script src="auth.js"></script>
+  <script src="results.js"></script>
+  <script>if (protectPage()) initResults();</script>
+</body>
+</html>

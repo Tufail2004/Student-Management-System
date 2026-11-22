@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teacher Panel | SMS</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>SMS</h2>
+      <ul>
+        <li class="active"><a href="teacher.html">Dashboard</a></li>
+        <li><a href="dashboard.html#students">Students</a></li>
+        <li><a href="attendance.html">Attendance</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><button class="logout" onclick="logout()">Logout</button></li>
+      </ul>
+    </aside>
+    <main class="main">
+      <div class="topbar"><h1>Teacher Dashboard</h1></div>
+      <p class="panel-copy">You can manage attendance and results.</p>
+    </main>
+  </div>
+  <script src="auth.js"></script>
+  <script>protectPage("teacher");</script>
+</body>
+</html>

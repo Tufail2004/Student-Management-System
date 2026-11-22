@@ -1,0 +1,47 @@
+* { box-sizing: border-box; }
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  background: #f5f6f8;
+  color: #30343b;
+  font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+}
+.login-box {
+  width: min(100%, 380px);
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #d9dde3;
+  border-radius: 6px;
+}
+.login-box h2 { margin: 0 0 22px; color: #252a31; font-size: 21px; font-weight: 600; }
+.login-box input, .login-box select {
+  display: block;
+  width: 100%;
+  min-height: 42px;
+  margin: 0 0 14px;
+  padding: 9px 11px;
+  color: #30343b;
+  background: #fff;
+  border: 1px solid #cbd0d8;
+  border-radius: 4px;
+  font: inherit;
+}
+.login-box input:focus, .login-box select:focus { outline: 2px solid #bfdbfe; border-color: #2563eb; }
+.login-box button {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 4px;
+  color: #fff;
+  background: #2563eb;
+  border: 1px solid #2563eb;
+  border-radius: 4px;
+  font: inherit;
+  cursor: pointer;
+}
+.login-box button:hover { background: #1d4ed8; }
+.register-link { margin: 18px 0 0; color: #555d68; text-align: center; font-size: 14px; }
+.register-link a { color: #2563eb; text-decoration: none; }
+.register-link a:hover { text-decoration: underline; }
