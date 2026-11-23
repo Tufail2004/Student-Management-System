@@ -2,7 +2,7 @@ const API_BASE = "https://student-management-system-ros7.onrender.com/api";
 
 
 async function authRequest(path, body) {
-  const response = await fetch(`${AUTH_API}/${path}`, {
+  const response = await fetch(`${API_BASE}/${path}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body)
