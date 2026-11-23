@@ -1,4 +1,5 @@
-const resultsApi = "http://localhost:5000/api";
+const API_BASE = "https://student-management-system-ros7.onrender.com/api";
+
 const resultForm = document.getElementById("resultForm");
 
 async function resultsResponse(response) {

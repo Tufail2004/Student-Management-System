@@ -1,4 +1,5 @@
-const AUTH_API = "http://localhost:5000/api/auth";
+const API_BASE = "https://student-management-system-ros7.onrender.com/api";
+
 
 async function authRequest(path, body) {
   const response = await fetch(`${AUTH_API}/${path}`, {
